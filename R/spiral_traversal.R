@@ -1,3 +1,14 @@
+#' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm
+#'
+#' @param size Integer value specifying the dimensions of the matrix to be traversed
+#'
+#' @return A list with three elements, containing the coordinates of the matrix cells in
+#' the spiral order as a 2*size^2 matrix; the number of rows as an integer value;
+#' the number of columns as an integer value
+#' @export
+#'
+#' @examples
+#' spiral_traversal(5)
 spiral_traversal <- function(size) {
   # Ensure that dimensions of matrix are odd
   ifelse(size %% 2 == 0,
