@@ -1,4 +1,4 @@
-#' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm
+#' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Square Matrices
 #'
 #' @param size Integer value specifying the dimensions of the matrix to be traversed
 #'

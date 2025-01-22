@@ -1,3 +1,16 @@
+#' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Rectangular Matrices
+#'
+#' @param size Integer value specifying the number of columns to be traversed
+#' @param asp Integer value > 1 specifying the aspect ratio of output matrix.
+#' This determines the number of columns by size * asp
+#'
+#' @return A list with three elements, containing the coordinates of the matrix cells in
+#' the spiral order as a 2 x (size x (size x asp)) matrix; the number of rows as an integer value;
+#' the number of columns as an integer value
+#' @export
+#'
+#' @examples
+#' spiral_traversal_rect(3, 2)
 spiral_traversal_rect <- function(size, asp) {
   # Get pixel_order of pixles from spiral traversal algorithm
   ifelse(size %% 2 == 0,
