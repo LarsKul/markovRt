@@ -18,7 +18,7 @@ spiral_traversal <- function(size) {
   # Get pixel_order of pixles from spiral traversal algorithm
   mid <- median(1:size)
   pixel_order <- matrix(mid, nrow = size^2, ncol = 2)
-  colnames(pixel_order) <- c("row", "col")
+  dimnames(pixel_order) <- list(NULL,c("row", "col"))
   pointers <- c(mid - 1, mid - 1, mid + 1, mid + 1)
   names(pointers) <- c("left", "top", "bottom", "right")
   i <- 1
