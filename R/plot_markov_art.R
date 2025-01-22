@@ -28,4 +28,3 @@ plot_markov_art <- function(
           axes = FALSE, xlab = "", ylab = "", main = "", asp = asp)
   }
 }
-
