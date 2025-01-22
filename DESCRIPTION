@@ -13,3 +13,5 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     viridisLite
+URL: https://github.com/LarsKul/markovRt
+BugReports: https://github.com/LarsKul/markovRt/issues
