@@ -1,29 +1,30 @@
-#' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm
-#'
-#' @param size Integer value specifying the dimensions of the matrix to be traversed
-#'
-#' @return A list with three elements, containing the coordinates of the matrix cells in
-#' the spiral order as a 2*size^2 matrix; the number of rows as an integer value;
-#' the number of columns as an integer value
-#' @export
-#'
-#' @examples
-#' spiral_traversal(5)
-spiral_traversal <- function(size) {
-  # Ensure that dimensions of matrix are odd
-  ifelse(size %% 2 == 0,
-         size <- size + 1,
-         size <- size)
-
+spiral_traversal_rect <- function(size, asp) {
   # Get pixel_order of pixles from spiral traversal algorithm
-  mid <- median(1:size)
-  pixel_order <- matrix(mid, nrow = size^2, ncol = 2)
+  ifelse(size %% 2 == 0,
+         n_cols <- size + 1,
+         n_cols <- size)
+  n_rows <- round(n_cols * asp)
+  ifelse(n_rows %% 2 == 1,
+         n_rows <- n_rows + 1,
+         n_rows <- n_rows)
+  mid_c <- median(1:n_cols)
+  mid_r <- median(1:n_rows)
+  dif_c_r <- 0.5 * (n_rows - n_cols)
+  pixel_order <- matrix(NA, nrow = (n_cols * n_rows), ncol = 2)
   dimnames(pixel_order) <- list(NULL, c("row", "col"))
-  pointers <- c(mid - 1, mid - 1, mid + 1, mid + 1)
+  pointers <- c(mid_c - 1, mid_r - dif_c_r - 1, mid_r + dif_c_r + 1 ,mid_c + 1)
   names(pointers) <- c("left", "top", "bottom", "right")
-  i <- 1
 
-  while (pointers["bottom"] <= size && pointers["right"] <= size) {
+  # Fill first (middle) column
+  new_rows <- c((pointers["top"] + 1):(pointers["bottom"] - 1))
+  new_cols <- rep_len(mid_c, length(new_rows))
+  pixel_order[c(seq_len(length(new_rows))), 1] <- new_rows
+  pixel_order[c(seq_len(length(new_cols))), 2] <- new_cols
+
+  i <- as.numeric(pointers["bottom"] - pointers["top"] - 1)
+
+  # Fill rest
+  while (pointers["bottom"] <= n_rows && pointers["right"] <= n_cols) {
     # left column, bottom -1 to top row
     new_rows <- c((pointers["bottom"] - 1):pointers["top"])
     new_cols <- rep_len(pointers["left"], length(new_rows))
@@ -52,6 +53,6 @@ spiral_traversal <- function(size) {
     pointers[1:2] <- pointers[1:2] - 1
     pointers[3:4] <- pointers[3:4] + 1
   }
-  pixel_order <- list(order = pixel_order, n_rows = size, n_cols = size)
+  pixel_order <- list(order = pixel_order, n_rows = n_rows, n_cols = n_cols)
   return(pixel_order)
 }
