@@ -7,7 +7,7 @@
 spiral_traversal_rect(size, asp)
 }
 \arguments{
-\item{size}{Integer value specifying the number of columns to be traversed}
+\item{size}{Integer value > 1 specifying the number of columns to be traversed}
 
 \item{asp}{Integer value > 1 specifying the aspect ratio of output matrix.
 This determines the number of columns by size * asp}

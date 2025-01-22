@@ -13,7 +13,7 @@
 make_markov_art <- function(
     size = 101, # size of the art piece; values > 1000 are not recomendet
     asp = 1, # aspect ratio of piece; has to be >= 1
-    seed = NULL, # the random seed for the Markov chain
+    seed = NULL # the random seed for the Markov chain
 ) {
 
   # Get pixel_order of pixles from spiral traversal algorithm

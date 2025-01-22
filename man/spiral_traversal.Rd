@@ -7,7 +7,7 @@
 spiral_traversal(size)
 }
 \arguments{
-\item{size}{Integer value specifying the dimensions of the matrix to be traversed}
+\item{size}{Integer value > 1 specifying the dimensions of the matrix to be traversed}
 }
 \value{
 A list with three elements, containing the coordinates of the matrix cells in
