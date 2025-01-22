@@ -3,7 +3,7 @@
 #' @param size Integer value specifying the dimensions of the matrix to be traversed
 #'
 #' @return A list with three elements, containing the coordinates of the matrix cells in
-#' the spiral order as a 2*size^2 matrix; the number of rows as an integer value;
+#' the spiral order as a 2 x (size^2) matrix; the number of rows as an integer value;
 #' the number of columns as an integer value
 #' @export
 #'

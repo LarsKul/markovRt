@@ -2,7 +2,7 @@
 % Please edit documentation in R/spiral_traversal.R
 \name{spiral_traversal}
 \alias{spiral_traversal}
-\title{Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm}
+\title{Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Square Matrices}
 \usage{
 spiral_traversal(size)
 }
@@ -11,11 +11,11 @@ spiral_traversal(size)
 }
 \value{
 A list with three elements, containing the coordinates of the matrix cells in
-the spiral order as a 2*size^2 matrix; the number of rows as an integer value;
+the spiral order as a 2 x (size^2) matrix; the number of rows as an integer value;
 the number of columns as an integer value
 }
 \description{
-Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm
+Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Square Matrices
 }
 \examples{
 spiral_traversal(5)
