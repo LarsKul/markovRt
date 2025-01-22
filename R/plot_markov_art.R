@@ -17,7 +17,6 @@ plot_markov_art <- function(
   asp <- nrow(data) / ncol(data)
   if (save == TRUE) {
     png(filename = paste("beatifull_markov_art", Sys.time(), ".png", sep = ""))
-    #    pdf(file = paste("beatifull_markov_art", Sys.time(), ".pdf", sep = ""))
     image(t(data)[, nrow(data):1],
           col = colour,
           axes = FALSE, xlab = "", ylab = "", main = "", asp = asp)
