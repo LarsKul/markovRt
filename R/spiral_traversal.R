@@ -1,6 +1,6 @@
 #' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Square Matrices
 #'
-#' @param size Integer value specifying the dimensions of the matrix to be traversed
+#' @param size Integer value > 1 specifying the dimensions of the matrix to be traversed
 #'
 #' @return A list with three elements, containing the coordinates of the matrix cells in
 #' the spiral order as a 2 x (size^2) matrix; the number of rows as an integer value;

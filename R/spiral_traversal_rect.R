@@ -1,6 +1,6 @@
 #' Get Order of Matrix-Cell-Coordinates From Inside Out Using Spiral Traversal Algorithm for Rectangular Matrices
 #'
-#' @param size Integer value specifying the number of columns to be traversed
+#' @param size Integer value > 1 specifying the number of columns to be traversed
 #' @param asp Integer value > 1 specifying the aspect ratio of output matrix.
 #' This determines the number of columns by size * asp
 #'

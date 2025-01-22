@@ -1,8 +1,19 @@
+#' Make a Matrix of Values as a Basis for Random Artpiece Based on Very Simple Markov Chain
+#'
+#' @param size Integer value > 1 specifying the dimensions of the matrix to be traversed
+#' @param asp If rectangular canvas is desired, integer value > 1 specifying the aspect ratio of output matrix.
+#' This determines the number of columns by size * asp
+#' @param seed Random seed for the Markov Chain
+#'
+#' @return A matrix of integer values
+#' @export
+#'
+#' @examples
+#' make_markov_art(size = 11, asp = 1, seed = 42)
 make_markov_art <- function(
     size = 101, # size of the art piece; values > 1000 are not recomendet
     asp = 1, # aspect ratio of piece; has to be >= 1
     seed = NULL, # the random seed for the Markov chain
-    save = FALSE # should the piece be saved as a .png?
 ) {
 
   # Get pixel_order of pixles from spiral traversal algorithm
